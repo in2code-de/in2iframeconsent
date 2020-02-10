@@ -1,0 +1,12 @@
+plugin.tx_in2iframeconsent {
+
+}
+
+page {
+	includeJSLibs {
+		in2iframeconsent = EXT:in2iframeconsent/Resources/Public/JavaScripts/main.js
+	}
+	includeCSS {
+		in2iframeconsent = EXT:in2iframeconsent/Resources/Public/Css/in2iframeconsent.css
+	}
+}
