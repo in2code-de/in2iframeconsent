@@ -1,0 +1,47 @@
+{
+  "name": "in2iframeconsent",
+  "version": "1.0.0",
+  "description": "",
+  "browserslist": [
+    "last 3 version",
+    "> 1%",
+    "maintained node versions",
+    "not dead"
+  ],
+  "scripts": {
+    "bundle:js": "rollup -c",
+    "build:js": "npm-run-all bundle:js",
+    "watch:js": "onchange -k \"JavaScripts/**/*.js\" -- npm run build:js --silent"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.in2code.de:in2code-Team/in2iframeconsent.git"
+  },
+  "author": "in2code GmbH (Sebastian Stein)",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "autoprefixer": "^9.6.1",
+    "browser-sync": "^2.26.7",
+    "browserslist": "^4.6.6",
+    "gitlab": "^12.1.0",
+    "jshint": "^2.10.2",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^6.0.0",
+    "parallelshell": "3.0.1",
+    "postcss-clean": "^1.1.0",
+    "postcss-preset-env": "^6.7.0",
+    "pug": "^2.0.4",
+    "pug-cli": "^1.0.0-alpha6",
+    "rollup": "^1.27.2",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-scss": "^1.0.2",
+    "rollup-plugin-uglify": "^6.0.3"
+  },
+  "dependencies": {
+    "js-cookie": "^2.2.1"
+  }
+}
