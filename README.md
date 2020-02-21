@@ -4,14 +4,12 @@
 
 - [Einrichtung](Documentation/Einrichtung.md)
 
-##Erklärung
-
+## Erklärung
 Mit unserem in2iframeconsent wird verhindert, dass IFrames ohne Zustimmung des Benutzer geladen werden. 
 
 Wichtig hierbei ist, dass wir das laden von IFrames auch verhindern, wenn Javascript deaktiviert ist.
 
-##Funktion
-
+## Funktion
 **IFrame Akzeptieren (einzeln):**
 Wird ein IFrame akzeptiert, wird ein Cookie  mit dem namen "*iframeswitch*" gesetzt. In diesem Cookie wird die Domaine des aktuell akzeptierten Iframes gespeichert. 
   Anhand dieser Domain, werden auch alle IFrames freigeben, die von der selben Domain kommen. IFrames von einer anderen Domaine werden nicht Freigegeben. 
