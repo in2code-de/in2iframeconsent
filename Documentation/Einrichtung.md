@@ -1,6 +1,7 @@
 # Einrichtung
 
-###Allgemein
+##Allgemein
+
 Zum Einrichten des in2iframeconsent muss die **main.js** und **main.css** in das jeweilige Projekt mit aufgenommen werden.
 
 Sobald das Javascript und Styling im Projekt liegt, muss das Template für das jeweilige Content-Element, in dem das Iframe geladen wird, angepasst werden.
@@ -29,7 +30,7 @@ Beispiel Template:
 **iframeswitch-submit** => Über den Button wird das Laden des Iframes akzeptiert und das IFrame dementsprechend gerendert
 
 
-###enableAll()-Funktion Bereitstellen
+##enableAll()-Funktion Bereitstellen
 
 Um die Funktion zum gleichzeitigen akzeptieren aller IFrames zum ermöglichen, muss folgendes Script, z.b. in unserem Cookie-Modal, hinterlegt werden. 
 
