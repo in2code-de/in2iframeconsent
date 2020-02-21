@@ -3,6 +3,7 @@
 ## Inhaltsverzeichnis
 
 - [Einrichtung](Documentation/Einrichtung.md)
+- [Frontend Toolchain](Documentation/Frontend.md)
 
 ## Erklärung
 Mit unserem in2iframeconsent wird verhindert, dass IFrames ohne Zustimmung des Benutzer geladen werden. 
