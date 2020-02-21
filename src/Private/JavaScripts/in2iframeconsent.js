@@ -22,10 +22,8 @@ function IframeSwitch() {
 	 * @returns {void}
 	 */
 	this.enableAll = function () {
-		// set cookie with *
 		setCookie('iframeswitch', '*');
 		autoEnableIframes();
-		// aufruf var iframeSwitch = new window.IframeSwitch(); iframeSwitch.enableAll();
 	};
 
 	/**
