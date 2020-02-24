@@ -23,8 +23,16 @@ gulp.task('js', function() {
 			.pipe(gulp.dest(project.js))
 });
 
+gulp.task('css', function() {
+	gulp.src([__dirname + '/CSS/*.css'])
+		.pipe(plumber())
+		.pipe(concat('in2iframeconsent.css'))
+		// .pipe(gulpif(!debug, uglify()))
+		.pipe(gulp.dest(project.css))
+});
 
-gulp.task('build', ['js']);
+
+gulp.task('build', ['js', 'css']);
 
 /**
  * Get arguments from commandline
