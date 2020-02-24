@@ -1,12 +1,9 @@
 .iframeswitch-container {
-  background-image: url('../Images/iframe.jpg');
-  background-position:center;
-  background-repeat: no-repeat;
   background-size: auto;
   box-shadow: 0 3px 5px #333;
-  height: 400px;
+  height: 300px;
   width: 100%;
-  padding-top: 4%;
+  padding-top: 1px;
   padding-left: 5%;
   padding-right: 5%;
   text-align: center;
@@ -19,7 +16,7 @@
 }
 
 .iframeswitch-submit {
-  margin-top: 35%;
+  margin-top: 20px;
   padding: 1em;
   width: 100%;
   box-shadow: none;
@@ -35,4 +32,8 @@
   border: 1px solid grey;
   background-color: #fff;
   color: #000;
+}
+
+.iframeswitch-header{
+  padding-right: 11em;
 }
