@@ -29,7 +29,19 @@ Beispiel Template:
 
 **iframeswitch-submit** => Über den Button wird das Laden des Iframes akzeptiert und das IFrame dementsprechend gerendert
 
+### Weitere Attribute hinzufügen:
 
+Es ist möglich dem eingebunden Iframe-Div weitere data-Attribute mitzugeben, mit welchen verschiedene Sachen ermöglicht werden.
+
+##### Beispiel:
+
+Setz man z.b. folgendes Data-Attribute mit den folgenden werten:
+
+```data-iframeswitch-style="border: 1px solid red"```
+
+So bekommt das zu Rendernde Iframe einen roten Rahmen.
+
+Dadurch lassen sich die Iframes spezifisch gestalten.
 ### enableAll()-Funktion Bereitstellen
 
 Um die Funktion zum gleichzeitigen akzeptieren aller IFrames zum ermöglichen, muss folgendes Script, z.b. in unserem Cookie-Modal, hinterlegt werden. 
