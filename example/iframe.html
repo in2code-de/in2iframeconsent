@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="../src/Public/CSS/in2iframeconsent.css">
-
-	<style>
-		body{
-			margin-right: 600px;
-			margin-bottom: 600px;
-			margin-left: 600px;
-			margin-top: 30px;
-		}
-	</style>
+	<link rel="stylesheet" href="../src/Public/CSS/in2iframeconsent.css">		<style>
+	body{
+		margin-right: 600px;
+		margin-bottom: 600px;
+		margin-left: 600px;
+		margin-top: 30px;
+	}
+</style>
 </head>
-<body>
-
-<!-------------------------------------------------------------------------------------------------------------
-           RELEVANT CODE TO REPLACE OUR CONTENT ELEMENTS
--------------------------------------------------------------------------------------------------------------->
+<body>	<!-------------------------------------------------------------------------------------------------------------
+			   RELEVANT CODE TO REPLACE OUR CONTENT ELEMENTS
+	-------------------------------------------------------------------------------------------------------------->
 <div class="iframeswitch-container"
 	 data-iframeswitch-src="https://player.vimeo.com/video/226053498"
-	 data-iframeswitch-class="iframe">
-	<h1 class="iframeswitch-header">Externer Inhalt</h1>
-	Um diesen Inhalt (Quelle: <span data-iframeswitch-uri="true">www.xyz.de</span>) anzuzeigen, klicken Sie bitte
-	auf Akzeptieren. Wir möchten Sie darauf hinweisen, dass durch das Akzeptieren dieses Iframes Daten an Dritte
-	übermittelt oder
-	Cookies gespeichert werden könnten. Weitere Informationen finden Sie auf unserer <a
-		href="#">Datenschutzerklärung</a>.
-	<button class="iframeswitch-submit">Akzeptieren</button>
+	 data-iframeswitch-class="iframe">		<h1 class="iframeswitch-header">Externer Inhalt</h1>
+	<p>
+		Um diesen Inhalt (Quelle: <span data-iframeswitch-uri="true">www.xyz.de</span>) anzuzeigen, klicken Sie bitte
+		auf Akzeptieren.<br>
+		Wir möchten Sie darauf hinweisen, dass durch das Akzeptieren dieses Iframes Daten an Dritte
+		übermittelt oder
+		Cookies gespeichert werden könnten.
+	</p>
+	<p>
+		Weitere Informationen finden Sie in unserer <a href="#">Datenschutzerklärung</a>.
+	</p>
+	<button data-iframeswitch-submit="true" class="iframeswitch-submit">Akzeptieren</button>
 </div>
 <!-------------------------------------------------------------------------------------------------------------
-           END RELEVANT CODE
--------------------------------------------------------------------------------------------------------------->
-
-<script type="application/javascript" src="../src/Public/JavaScripts/in2iframeconsent.js"></script>
+		   END RELEVANT CODE
+-------------------------------------------------------------------------------------------------------------->	<script type="application/javascript" src="../src/Public/JavaScripts/in2iframeconsent.js"></script>
 </body>
 </html>

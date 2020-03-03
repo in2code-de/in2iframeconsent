@@ -32,13 +32,11 @@ function IframeSwitch() {
 	var iframeSwitchListener = function () {
 		var elements = document.querySelectorAll('[data-iframeswitch-src]');
 		for (var i = 0; i < elements.length; i++) {
-			var elementStart = elements[i].querySelector('button');
+			var elementStart = elements[i].querySelector('[data-iframeswitch-submit]');
 			elementStart.addEventListener('click', function (event) {
-				var container = event.target.parentNode;
-				if (container.tagName !== 'A') {
-					setCookie('iframeswitch', extractHostname(container.getAttribute('data-iframeswitch-src')));
-					autoEnableIframes();
-				}
+				var container = closest(event.target, '[data-iframeswitch-src]');
+				setCookie('iframeswitch', extractHostname(container.getAttribute('data-iframeswitch-src')));
+				autoEnableIframes();
 			});
 		}
 	};
@@ -77,7 +75,7 @@ function IframeSwitch() {
 	var uriListener = function () {
 		var elements = document.querySelectorAll('[data-iframeswitch-uri]');
 		for (var i = 0; i < elements.length; i++) {
-			var parentSrc = elements[i].parentNode.getAttribute('data-iframeswitch-src');
+			var parentSrc = closest(elements[i], '[data-iframeswitch-src]').getAttribute('data-iframeswitch-src');
 			var uri = extractHostname(parentSrc);
 			elements[i].innerHTML = uri;
 		}
@@ -189,6 +187,42 @@ function IframeSwitch() {
 			}
 		}
 		return '';
+	};
+
+	/**
+	 * JavaScript pendent to jQuerys closest() function
+	 *
+	 * @param el
+	 * @param selector
+	 * @returns {*}
+	 */
+	var closest = function (el, selector) {
+		var matchesFn;
+		// find vendor prefix
+		[
+			'matches',
+			'webkitMatchesSelector',
+			'mozMatchesSelector',
+			'msMatchesSelector',
+			'oMatchesSelector'
+		].some(function (fn) {
+			if (typeof document.body[fn] == 'function') {
+				matchesFn = fn;
+				return true;
+			}
+			return false;
+		});
+		var parent;
+
+		// traverse parents
+		while (el) {
+			parent = el.parentElement;
+			if (parent && parent[matchesFn](selector)) {
+				return parent;
+			}
+			el = parent;
+		}
+		return null;
 	};
 }
 
