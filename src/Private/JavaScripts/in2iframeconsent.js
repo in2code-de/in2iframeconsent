@@ -10,6 +10,11 @@ function IframeSwitch() {
 	var livetime = 86400000;
 
 	/**
+	 * @type {number}
+	 */
+	var expirationDate = 3650;
+
+	/**
 	 * @returns {void}
 	 */
 	this.initialize = function () {
@@ -22,7 +27,7 @@ function IframeSwitch() {
 	 * @returns {void}
 	 */
 	this.enableAll = function () {
-		setCookie('iframeswitch', '*');
+		setCookie('iframeswitch', '*', expirationDate);
 		autoEnableIframes();
 	};
 
@@ -35,7 +40,7 @@ function IframeSwitch() {
 			var elementStart = elements[i].querySelector('[data-iframeswitch-submit]');
 			elementStart.addEventListener('click', function (event) {
 				var container = closest(event.target, '[data-iframeswitch-src]');
-				setCookie('iframeswitch', extractHostname(container.getAttribute('data-iframeswitch-src')));
+				setCookie('iframeswitch', extractHostname(container.getAttribute('data-iframeswitch-src')), expirationDate);
 				autoEnableIframes();
 			});
 		}
@@ -164,6 +169,7 @@ function IframeSwitch() {
 			var date = new Date();
 			date.setTime(date.getTime() + (days * livetime));
 			expires = '; expires=' + date.toGMTString();
+			console.log(expires);
 		} else {
 			expires = '';
 		}

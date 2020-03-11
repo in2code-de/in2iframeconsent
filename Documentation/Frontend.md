@@ -22,5 +22,5 @@ npm i
 
 #### Staten der Toolchain
 
-````npm run build````
+````npm run build:all````
 
