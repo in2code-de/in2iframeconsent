@@ -14,7 +14,7 @@ Beispiel Template:
   	Um diesen Inhalt (Quelle: <span data-iframeswitch-uri="true">www.xyz.de</span>) anzuzeigen, klicken Sie bitte
   	auf Akzeptieren. Wir möchten Sie darauf hinweisen, dass durch das Akzeptieren dieses Iframes Daten an Dritte übermittelt oder
   	Cookies gespeichert werden könnten. Weitere Informationen finden Sie auf unserer <a href="#">Datenschutzerklärung</a>.
-  	<button class="iframeswitch-submit">Akzeptieren</button>
+  	<button class="iframeswitch-submit" data-iframeswitch-submit="true">Akzeptieren</button>
   </div>
 ````
 **class="iframeswitch-container"** => Styling des Consents im FE
