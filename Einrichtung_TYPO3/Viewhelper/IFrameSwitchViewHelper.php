@@ -20,7 +20,7 @@ class IFrameSwitchViewHelper extends AbstractViewHelper
      */
     public function initializeArguments()
     {
-        $this->registerArgument('content', 'string', 'consent markup', false);
+        $this->registerArgument('content', 'string', 'consent markup', true);
     }
 
     /**
