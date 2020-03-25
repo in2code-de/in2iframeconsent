@@ -90,13 +90,14 @@ function IframeSwitch() {
 	 * @returns {void}
 	 */
 	var changeElementToIframe = function (container) {
-		container.style.display = 'none';
 		var attributes = getAllDataAttributes(container);
 		var iframe = document.createElement('iframe');
 		for (var i = 0; i < attributes.length; i++) {
 			iframe.setAttribute(attributes[i].name, attributes[i].value);
 		}
 		container.parentNode.insertBefore(iframe, container);
+		container.parentNode.classList.remove("iframeswitch-init");
+		container.parentNode.removeChild(container);
 	};
 
 	/**
