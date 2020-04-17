@@ -47,7 +47,6 @@ Dadurch lassen sich die Iframes spezifisch gestalten.
 Um die Funktion zum gleichzeitigen akzeptieren aller IFrames zum ermöglichen, muss folgendes Script, z.b. in unserem Cookie-Modal, hinterlegt werden. 
 
 ```
-var iframeSwitch = new window.IframeSwitch();
-iframeSwitch.enableAll();
+window.iframeSwitch.enableAll();
 ```
 Durch diesen Aufruf wird in dem Cookie "iframeswitch" als Wert ein "*" gespeichert, welches dem in2iframeconsent sagt, dass alle IFrames akzeptiert sind.

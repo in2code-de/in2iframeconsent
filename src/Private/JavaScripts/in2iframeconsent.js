@@ -232,5 +232,6 @@ function IframeSwitch() {
 	};
 }
 
-var iframeSwitch = new window.IframeSwitch();
-iframeSwitch.initialize();
+window.iframeSwitch=new IframeSwitch;
+
+window.iframeSwitch.initialize();
