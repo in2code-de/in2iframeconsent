@@ -20,3 +20,18 @@ Wird ein IFrame akzeptiert, wird ein Cookie  mit dem namen "*iframeswitch*" gese
 **IFrame Akzeptieren (alle):**
 Das in2iframeconsent verfügt über eine *enableAll()*-Funktion. Mit dieser Funktion können, z.b. über unser Cookie-Modal, gleichzeitig alle IFrames auf der Website freigeben werden.  (Eine Beschreibung hierfür ist zu finden unter [Einrichtung](Documentation/Einrichtung.md) -> **enableAll()-Funktion Bereitstellen**.)
 
+# Change Log
+## [2.0.0] - 2020-04-17
+  
+### !!! BREAKING CHANGE!!!!!
+
+### Changed
+  
+- [in2iframeconsent.js](src/Private/JavaScripts/in2iframeconsent.js)
+
+  Das resultat von IFrameswitch() wird nun nicht mehr in einer Variable gespeichert, sondern in "window".
+  
+  [Einrichtung](Documentation/Einrichtung.md)
+  
+  Der Aufruf der enableAll()-Funktion, z.b. über das Cookie-Modal hat sich, geändert.
+
