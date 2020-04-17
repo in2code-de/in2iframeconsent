@@ -170,7 +170,6 @@ function IframeSwitch() {
 			var date = new Date();
 			date.setTime(date.getTime() + (days * livetime));
 			expires = '; expires=' + date.toGMTString();
-			console.log(expires);
 		} else {
 			expires = '';
 		}
