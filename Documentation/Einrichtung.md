@@ -2,7 +2,7 @@
 
 ### Allgemein
 
-Zum Einrichten des in2iframeconsent muss die **in2iframeconsent.js** und **in2iframeconsent.css** in das jeweilige Projekt mit aufgenommen werden.
+Zum Einrichten des in2iframeconsent muss die **in2iframeconsent.js** und **in2iframeconsent.css** aus dem Public-Verzeichnis in das jeweilige Projekt mit aufgenommen werden.
 
 Sobald das Javascript und Styling im Projekt liegt, muss das Template für das jeweilige Content-Element, in dem das Iframe geladen wird, angepasst werden.
 
