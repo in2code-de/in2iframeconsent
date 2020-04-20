@@ -35,3 +35,11 @@ Das in2iframeconsent verfügt über eine *enableAll()*-Funktion. Mit dieser Funk
   
   Der Aufruf der enableAll()-Funktion, z.b. über das Cookie-Modal hat sich, geändert.
 
+## [2.0.1] - 2020-04-20
+
+### Added
+
+ Beim anlegen eines Cookies, wird nun über den Code die aktuelle Domaine dem Cookie hinzugefügt. 
+ 
+ Normalerweise geschieht dies automatisch beim setzen eines Cookies über "document.cookie", nur lässt sich hiermit ein schon gesetzes Cookie über unser Cookie-Modal nicht mehr löschen.
+  
