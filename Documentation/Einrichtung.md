@@ -34,6 +34,11 @@ Beispiel Template:
 Es ist möglich dem eingebunden Iframe-Div weitere data-Attribute mitzugeben, mit welchen verschiedene Sachen ermöglicht werden.
 
 ##### Beispiel:
+* Youtube erlaube Fullscreen
+ 
+ ```data-iframeswitch-allowfullscreen="""```
+
+* zusätzliche Inline-Styles
 
 Setz man z.b. folgendes Data-Attribute mit den folgenden werten:
 
