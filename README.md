@@ -4,6 +4,7 @@
 
 - [Einrichtung](Documentation/Einrichtung.md)
 - [Frontend Toolchain](Documentation/Frontend.md)
+- [Verwendung TYPO3](Documentation/TYPO3_Viewhelper.md)
 
 ## Erklärung
 Mit unserem in2iframeconsent wird verhindert, dass IFrames ohne Zustimmung des Benutzer geladen werden. 
@@ -42,4 +43,8 @@ Das in2iframeconsent verfügt über eine *enableAll()*-Funktion. Mit dieser Funk
  Beim anlegen eines Cookies, wird nun über den Code die aktuelle Domaine dem Cookie hinzugefügt. 
  
  Normalerweise geschieht dies automatisch beim setzen eines Cookies über "document.cookie", nur lässt sich hiermit ein schon gesetzes Cookie über unser Cookie-Modal nicht mehr löschen.
-  
+
+## [2.0.2] - 2021-06-25
+
+### Changed
+Die Default Cookiedauer war leicht unpräzise, dies wurde jetzt gefixed. 
