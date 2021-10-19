@@ -168,7 +168,7 @@ function IframeSwitch() {
 		} else {
 			expires = '';
 		}
-		document.cookie = name + '=' + value + expires + ';domain=' + window.location.hostname + '; path=/';
+		document.cookie = name + '=' + value + expires + ';domain=' + window.location.hostname + '; path=/;SameSite=None;secure';
 	};
 
 	/**
