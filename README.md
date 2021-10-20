@@ -48,3 +48,15 @@ Das in2iframeconsent verfügt über eine *enableAll()*-Funktion. Mit dieser Funk
 
 ### Changed
 Die Default Cookiedauer war leicht unpräzise, dies wurde jetzt gefixed. 
+
+## [2.0.3] - 2021-10-19
+
+### Added
+
+ Samesite = None und Secure attribut wurden dem Cookie hinzugefügt. 
+
+## [2.0.4] - 2021-10-20
+
+### Changed
+
+Cookie expirationDate wurde falsch berechnet, dies wurde jetzt gefixed.  

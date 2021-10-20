@@ -163,12 +163,12 @@ function IframeSwitch() {
 		var expires;
 		if (days) {
 			var expirationDate = new Date();
-			expirationDate.setFullYear(expirationDate.getFullYear() * expirationYears);
+			expirationDate.setFullYear(expirationDate.getFullYear() + expirationYears);
 			expires = '; expires=' + expirationDate.toGMTString();
 		} else {
 			expires = '';
 		}
-		document.cookie = name + '=' + value + expires + ';domain=' + window.location.hostname + '; path=/';
+		document.cookie = name + '=' + value + expires + ';domain=' + window.location.hostname + '; path=/;SameSite=None;secure';
 	};
 
 	/**
