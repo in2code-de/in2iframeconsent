@@ -163,7 +163,7 @@ function IframeSwitch() {
 		var expires;
 		if (days) {
 			var expirationDate = new Date();
-			expirationDate.setFullYear(expirationDate.getFullYear() * expirationYears);
+			expirationDate.setFullYear(expirationDate.getFullYear() + expirationYears);
 			expires = '; expires=' + expirationDate.toGMTString();
 		} else {
 			expires = '';
