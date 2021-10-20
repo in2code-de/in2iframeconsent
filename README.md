@@ -54,3 +54,9 @@ Die Default Cookiedauer war leicht unpräzise, dies wurde jetzt gefixed.
 ### Added
 
  Samesite = None und Secure attribut wurden dem Cookie hinzugefügt. 
+
+## [2.0.4] - 2021-10-20
+
+### Changed
+
+Cookie expirationDate wurde falsch berechnet, dies wurde jetzt gefixed.  
