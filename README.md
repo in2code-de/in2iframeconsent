@@ -1,62 +1,74 @@
-# in2iframeconsent
+## What is in2iframeswitch?
 
-## Inhaltsverzeichnis
+in2iframeswitch is a consent management solution developed by in2code to load iFrames only after a page visitor's consent.
 
-- [Einrichtung](Documentation/Einrichtung.md)
-- [Frontend Toolchain](Documentation/Frontend.md)
-- [Verwendung TYPO3](Documentation/TYPO3_Viewhelper.md)
+> **Info**: Starting with in2iframeswitch version 3.0.0 it is now possible to install the JavaScript as well as CSS directly via NPM.
 
-## Erklärung
-Mit unserem in2iframeconsent wird verhindert, dass IFrames ohne Zustimmung des Benutzer geladen werden. 
+### Functionality
 
-Wichtig hierbei ist, dass wir das laden von IFrames auch verhindern, wenn Javascript deaktiviert ist.
+in2iframeconsent enables the display of an iFrame Consent Banner.
+After the page visitor agrees, the Consent banner is then replaced with the correct iFrame.
 
-## Funktion
-**IFrame Akzeptieren (einzeln):**
-Wird ein IFrame akzeptiert, wird ein Cookie  mit dem namen "*iframeswitch*" gesetzt. In diesem Cookie wird die Domaine des aktuell akzeptierten Iframes gespeichert. 
-  Anhand dieser Domain, werden auch alle IFrames freigeben, die von der selben Domain kommen. IFrames von einer anderen Domaine werden nicht Freigegeben. 
-  
-  Wird ein IFrame einer anderen Domaine akzeptiert, wird das gesetzte Cookie um die jeweilige Domain erweitert, und gibt dementsprechend auch die IFrames frei, welche von der neu gesetzten Domaine kommen.
-  
-**IFrame Akzeptieren (alle):**
-Das in2iframeconsent verfügt über eine *enableAll()*-Funktion. Mit dieser Funktion können, z.b. über unser Cookie-Modal, gleichzeitig alle IFrames auf der Website freigeben werden.  (Eine Beschreibung hierfür ist zu finden unter [Einrichtung](Documentation/Einrichtung.md) -> **enableAll()-Funktion Bereitstellen**.)
+### Documentation information
 
-# Change Log
-## [2.0.0] - 2020-04-17
-  
-### !!! BREAKING CHANGE!!!!!
+In version 3, in2iframeconsent was ported to TypeScript. The advantage of this is type safety during development.
 
-### Changed
-  
-- [in2iframeconsent.js](src/Private/JavaScripts/in2iframeconsent.js)
+## Installation
 
-  Das resultat von IFrameswitch() wird nun nicht mehr in einer Variable gespeichert, sondern in "window".
-  
-  [Einrichtung](Documentation/Einrichtung.md)
-  
-  Der Aufruf der enableAll()-Funktion, z.b. über das Cookie-Modal hat sich, geändert.
+### NPM
 
-## [2.0.1] - 2020-04-20
+> **Info**: At the time of writing this documentation, this installation method has not been used at all, if at all. If
+problems occur, please contact Andreas or Felix for support!
 
-### Added
+Since version 3.0.0 there is the possibility to install in2cookiemodal also via npm as ES module.
 
- Beim anlegen eines Cookies, wird nun über den Code die aktuelle Domaine dem Cookie hinzugefügt. 
- 
- Normalerweise geschieht dies automatisch beim setzen eines Cookies über "document.cookie", nur lässt sich hiermit ein schon gesetzes Cookie über unser Cookie-Modal nicht mehr löschen.
+```shell
+# latest stable
+$ npm i in2iframeconsent
+```
 
-## [2.0.2] - 2021-06-25
+After that you can use the following JavaScript in the project:
 
-### Changed
-Die Default Cookiedauer war leicht unpräzise, dies wurde jetzt gefixed. 
+```js
+import in2iframeconsent from 'in2iframeconsent';
 
-## [2.0.3] - 2021-10-19
+new in2iframeconsent();
+```
 
-### Added
+### Classic
 
- Samesite = None und Secure attribut wurden dem Cookie hinzugefügt. 
+For projects that do not yet have a build toolchain for modern JavaScript, the classic way is to use a JavaScript file
+which is statically included in a project.
 
-## [2.0.4] - 2021-10-20
+For this you can simply download a release build of in2cookiemodal from the
+[Releases](https://gitlab.in2code.de/in2code-Team/in2cookiemodal/-/releases) page from the GitLab repository.
 
-### Changed
+This file can then simply be included in the page with a `script` tag.
 
-Cookie expirationDate wurde falsch berechnet, dies wurde jetzt gefixed.  
+## Getting Started
+
+### Styling
+in2iframeconsent provides predefined styling for the Consent boxes.
+We recommend to use the in2iframeconsent in combination with a CSS compiler like SCSS.
+
+An exemplary integration of the required CSS files via SCSS can be found [here]().
+
+### Additional functions
+
+The in2iframeconsent configuration is stored under 'window.in2iframeconsent' after successful initialization.
+Additional functions can be accessed from here.
+
+#### Enable all iFrames
+```javascript
+window.in2iframeconsent.enableAll();
+```
+
+#### Disable all iFrames
+```javascript
+window.in2iframeconsent.disableAll();
+```
+
+#### Output current in2iframeswitch version to console
+```javascript
+window.in2iframeconsent.getVersion();
+```
