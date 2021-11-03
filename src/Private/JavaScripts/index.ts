@@ -1,18 +1,25 @@
 import { IframeDataAttribute } from './types';
-import { CookieCollection } from './CookieCollection';
+import pkg from 'package.json';
+import { CookieManager } from './CookieManager';
 
 class in2iframeswitch {
     private cookieName: string = 'iframeswitch';
     private expirationYears: number = 10;
+    private version: string = pkg.version;
 
     constructor() {
-        this.iframeSwitchListener();
+        this.addButtonEvents();
         this.autoEnableIframes();
-        this.uriListener();
+        this.addDomainInformation();
 
         window['iframeSwitch'] = this;
     }
 
+    /**
+     * Replaces iFrameconsentbox with correct iFrame
+     * @param container
+     * @private
+     */
     private changeElementToIframe(container: HTMLElement): void {
         const attributes = this.getAllDataAttributes(container);
         const iframe = document.createElement('iframe');
@@ -30,25 +37,27 @@ class in2iframeswitch {
     }
 
     /**
-     * Enable iFrame f src of the iFrame is set in the cookie for iframeswitch
+     * Enable Iframe, if src of the iframe is set in cookie for iframeswitch
+     * @private
      */
     private autoEnableIframes(): void {
         const elements = document.querySelectorAll<HTMLElement>('[data-iframeswitch-src]');
-        const cookieString = CookieCollection.getCookie(this.cookieName);
-        const cookies: string[] = cookieString.split(',');
+        const cookieString = CookieManager.getCookie(this.cookieName);
+        const activeCookies: string[] = cookieString.split(',');
 
         elements.forEach((element) => {
-            const iframeSource = this.extractHostname(element.getAttribute('data-iframeswitch-src'));
-
-            if (cookies.includes('*')) {
+            if (activeCookies.includes('*')) {
                 this.changeElementToIframe(element);
-            } else {
-                cookies.forEach((cookie) => {
-                    if (iframeSource === cookie) {
-                        this.changeElementToIframe(element);
-                    }
-                });
+                return;
             }
+
+            const iframeSource = in2iframeswitch.extractHostname(element.getAttribute('data-iframeswitch-src'));
+
+            activeCookies.forEach((currentCookie) => {
+                if (currentCookie === iframeSource) {
+                    this.changeElementToIframe(element);
+                }
+            });
         })
     }
 
@@ -56,43 +65,49 @@ class in2iframeswitch {
      * Replace <span data-iframeswitch-uri="true"></span> with the iFrame URL.
      * So it can be used inside the container
      */
-    private uriListener(): void {
+    private addDomainInformation(): void {
         const elements = document.querySelectorAll<HTMLElement>('[data-iframeswitch-uri]');
         elements.forEach((element) => {
-            const parentSrc = this.closest(
+            const parentSrc = in2iframeswitch.closest(
                 elements,
                 '[data-iframeswitch-src]').getAttribute('data-iframeswitch-src'
             );
 
-            const uri = this.extractHostname(parentSrc);
+            const uri = in2iframeswitch.extractHostname(parentSrc);
             element.innerHTML = uri;
         });
     }
 
-    private iframeSwitchListener(): void {
+    private addButtonEvents(): void {
         const elements = document.querySelectorAll<HTMLElement>('[data-iframeswitch-src]');
 
         elements.forEach((element) => {
             const elementStart = element.querySelector('[data-iframeswitch-submit]');
 
-            elementStart.addEventListener('click', (event) => {
-                const container = this.closest(event.target, '[data-iframeswitch-src]');
+            elementStart.addEventListener(
+                'click',
+                (event) => {
+                    const container = in2iframeswitch.closest(
+                        event.target,
+                        '[data-iframeswitch-src]'
+                    );
 
-                CookieCollection.setCookie({
-                    name: this.cookieName,
-                    value: this.extractHostname(container.getAttribute('data-iframeswitch-src')),
-                    expirationYears: this.expirationYears
-                });
+                    CookieManager.setCookie({
+                        name: this.cookieName,
+                        value: in2iframeswitch.extractHostname(container.getAttribute('data-iframeswitch-src')),
+                        expirationYears: this.expirationYears
+                    });
 
-                this.autoEnableIframes();
-            });
+                    this.autoEnableIframes();
+                }
+            );
         });
     }
 
     /**
      * JavaScript pendent to jQuerys closest() function
      */
-    private closest(element: HTMLElement[], selector: string): HTMLElement | null {
+    private static closest(element: HTMLElement[], selector: string): HTMLElement | null {
         let matchesFn;
 
         // find vendor prefix
@@ -158,7 +173,7 @@ class in2iframeswitch {
      * Enables all iFrameConsents
      */
     public enableAll(): void {
-        CookieCollection.setCookie({
+        CookieManager.setCookie({
             name: this.cookieName,
             value: '*',
             expirationYears: this.expirationYears,
@@ -171,6 +186,10 @@ class in2iframeswitch {
      * Disables all accepted iFrameConsents and deletes all in2iframeconsent Cookies
      */
     public disableAll(): void {
-        CookieCollection.deleteCookie(this.cookieName);
+        CookieManager.deleteCookie(this.cookieName);
+    }
+
+    public getVersion(): void {
+        console.log(`Your running on version ${this.version} of in2iframeconsent`);
     }
 }
