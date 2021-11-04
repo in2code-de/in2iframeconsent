@@ -20,7 +20,7 @@ In version 3, in2iframeconsent was ported to TypeScript. The advantage of this i
 > **Info**: At the time of writing this documentation, this installation method has not been used at all, if at all. If
 problems occur, please contact Andreas or Felix for support!
 
-Since version 3.0.0 there is the possibility to install in2cookiemodal also via npm as ES module.
+Since version 3.0.0 there is the possibility to install in2iframeconsent also via npm as ES module.
 
 ```shell
 # latest stable
@@ -40,7 +40,7 @@ new in2iframeconsent();
 For projects that do not yet have a build toolchain for modern JavaScript, the classic way is to use a JavaScript file
 which is statically included in a project.
 
-For this you can simply download a release build of in2cookiemodal from the
+For this you can simply download a release build of in2iframeconsent from the
 [Releases](https://gitlab.in2code.de/in2code-Team/in2cookiemodal/-/releases) page from the GitLab repository.
 
 This file can then simply be included in the page with a `script` tag.
