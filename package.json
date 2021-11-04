@@ -1,0 +1,38 @@
+{
+  "name": "in2iframeconsent",
+  "type": "module",
+  "version": "3.0.0",
+  "source": "src/index.ts",
+  "exports": {
+    "require": "./dist/require.cjs",
+    "default": "./dist/in2iframeconsent.modern.js"
+  },
+  "main": "./dist/in2iframeconsent.cjs",
+  "module": "./dist/in2iframeconsent.module.js",
+  "unpkg": "./dist/in2iframeconsent.umd.js",
+  "scripts": {
+    "build": "microbundle",
+    "dev": "microbundle watch",
+    "lint": "eslint src --ext .js,.ts"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.33.0",
+    "@typescript-eslint/parser": "^4.33.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-airbnb-typescript": "^14.0.1",
+    "microbundle": "^0.14.1",
+    "node-sass": "^6.0.1",
+    "sass": "^1.43.4",
+    "typescript": "^4.4.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/in2code-de/in2iframeconsent.git"
+  },
+  "author": "in2code GmbH (Felix Ranesberger)",
+  "bugs": {
+    "url": "https://github.com/in2code-de/in2iframeconsent/issues"
+  },
+  "homepage": "https://github.com/in2code-de/in2iframeconsent#readme"
+}
