@@ -93,11 +93,21 @@ class In2iframeswitch {
             '[data-iframeswitch-src]',
           );
 
+          const currentCookies = CookieManager.getCookie(this.cookieName);
+
+          if (currentCookies === '*') {
+            return;
+          }
+
+          const newCookie = In2iframeswitch.extractHostname(
+            container.getAttribute('data-iframeswitch-src')
+          );
+
           CookieManager.setCookie({
             name: this.cookieName,
-            value: In2iframeswitch.extractHostname(container.getAttribute('data-iframeswitch-src')),
+            value: currentCookies.length > 0 ? `${currentCookies},${newCookie}` : newCookie,
             expirationYears: this.expirationYears,
-          });
+          })
 
           this.autoEnableIframes();
         },
