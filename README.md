@@ -1,6 +1,6 @@
 
 <p align="center"><a href="#">
-    <img width=35% style="margin: 1rem auto" alt="in2code logo" src="https://raw.githubusercontent.com/in2code-de/in2iframeconsent/feature/typescript-rewrite/src/assets/images/in2code-logo.png">
+    <img width=35% alt="in2code logo" src="https://raw.githubusercontent.com/in2code-de/in2iframeconsent/feature/typescript-rewrite/src/assets/images/in2code-logo.png">
 </a></p>
 
 ## What is in2iframeswitch?

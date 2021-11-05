@@ -1,3 +1,4 @@
+import { version } from '../package.json';
 import { IframeDataAttribute } from './types';
 import CookieManager from './CookieManager';
 
@@ -206,6 +207,10 @@ class In2iframeswitch {
      */
   public disableAll(): void {
     CookieManager._deleteCookie(this._cookieName);
+  }
+
+  public getVersion(): void {
+    console.log(`in2iframeconsent is running on version ${version} 🌈`);
   }
 }
 
