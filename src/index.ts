@@ -11,7 +11,7 @@ class In2iframeswitch {
     this.autoEnableIframes();
     In2iframeswitch.addDomainInformation();
 
-    window.iframeswitch = window.iframeswitch || {};
+    window.iframeSwitch = window.iframeSwitch || {};
   }
 
   /**

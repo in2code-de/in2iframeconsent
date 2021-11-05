@@ -1,5 +1,5 @@
 declare global {
-  interface Window { iframeswitch: any; }
+  interface Window { iframeSwitch: any; }
 }
 
 export interface Cookie {
