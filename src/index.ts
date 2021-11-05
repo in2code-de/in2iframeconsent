@@ -94,23 +94,19 @@ class In2iframeswitch {
         elementStart.addEventListener(
             'click',
             (event) => {
+              const currentCookies = CookieManager.getCookie(this.cookieName);
+              if (currentCookies === '*') return;
+
               const container = In2iframeswitch.closest(
                   event.target as HTMLElement,
                   '[data-iframeswitch-src]',
               );
-
               if (!container) return;
 
-              const currentCookies = CookieManager.getCookie(this.cookieName);
+              const iframeSwitchURL = container.getAttribute('data-iframeswitch-src');
+              if (!iframeSwitchURL) return;
 
-              if (currentCookies === '*') {
-                return;
-              }
-
-              const url = container.getAttribute('data-iframeswitch-src');
-              if (!url) return;
-
-              const newCookie = In2iframeswitch.extractHostname(url);
+              const newCookie = In2iframeswitch.extractHostname(iframeSwitchURL);
 
               CookieManager.setCookie({
                 name: this.cookieName,
