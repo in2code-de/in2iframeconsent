@@ -1,6 +1,6 @@
 import { Cookie } from './types';
 export default class CookieManager {
-    static getCookie(name: string): string;
-    static setCookie({ name, value, expirationYears }: Cookie): void;
-    static deleteCookie(name: string): void;
+    static _getCookie(name: string): string;
+    static _setCookie({ name, value, expirationYears }: Cookie): void;
+    static _deleteCookie(name: string): void;
 }

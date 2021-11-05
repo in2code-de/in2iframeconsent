@@ -9,6 +9,9 @@
   "unpkg": "dist/js/in2iframeconsent.umd.js",
   "iife": "dist/js/in2iframeconsent.iife.js",
   "types": "dist/js/index.d.ts",
+  "mangle": {
+    "regex": "^_"
+  },
   "scripts": {
     "prebuild": "rm -rf dist --silent",
     "build": "npm-run-all build:js build:css",
@@ -40,3 +43,4 @@
   },
   "homepage": "https://github.com/in2code-de/in2iframeconsent#readme"
 }
+
