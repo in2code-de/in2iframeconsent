@@ -21,8 +21,8 @@ export default class CookieManager {
   public static _deleteCookie(name: string): void {
     this._setCookie({
       name,
-      value: 'nothing',
-      expirationYears: -100,
+      value: '',
+      expirationYears: -1,
     });
   }
 }
