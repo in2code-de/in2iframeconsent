@@ -11,8 +11,7 @@ class In2iframeswitch {
     this.autoEnableIframes();
     In2iframeswitch.addDomainInformation();
 
-    // eslint-disable-next-line @typescript-eslint/dot-notation
-    window['iframeSwitch'] = this;
+    window.iframeswitch = window.iframeswitch || {};
   }
 
   /**
@@ -52,13 +51,17 @@ class In2iframeswitch {
         return;
       }
 
-      const iframeSource = In2iframeswitch.extractHostname(element.getAttribute('data-iframeswitch-src'));
+      const iframeURL:string | null = element.getAttribute('data-iframeswitch-src');
 
-      activeCookies.forEach((currentCookie) => {
-        if (currentCookie === iframeSource) {
-          In2iframeswitch.changeElementToIframe(element);
-        }
-      });
+      if (iframeURL) {
+        const iframeSource = In2iframeswitch.extractHostname(iframeURL);
+
+        activeCookies.forEach((currentCookie) => {
+          if (currentCookie === iframeSource) {
+            In2iframeswitch.changeElementToIframe(element);
+          }
+        });
+      }
     });
   }
 
@@ -69,12 +72,15 @@ class In2iframeswitch {
   private static addDomainInformation(): void {
     const elements = document.querySelectorAll<HTMLElement>('[data-iframeswitch-uri]');
     elements.forEach((element) => {
-      const parentSrc = In2iframeswitch.closest(
-        element,
-        '[data-iframeswitch-src]',
-      ).getAttribute('data-iframeswitch-src');
+      const parent = In2iframeswitch.closest(
+          element,
+          '[data-iframeswitch-src]',
+      );
 
-      element.innerHTML = In2iframeswitch.extractHostname(parentSrc);
+      if (parent) {
+        const parentSrc = parent.getAttribute('data-iframeswitch-src') || 'error, domain not found';
+        element.innerHTML = In2iframeswitch.extractHostname(parentSrc);
+      }
     });
   }
 
@@ -84,33 +90,38 @@ class In2iframeswitch {
     elements.forEach((element) => {
       const elementStart = element.querySelector('[data-iframeswitch-submit]');
 
-      elementStart.addEventListener(
-        'click',
-        (event) => {
-          const container = In2iframeswitch.closest(
-            event.target as HTMLElement,
-            '[data-iframeswitch-src]',
-          );
+      if (elementStart) {
+        elementStart.addEventListener(
+            'click',
+            (event) => {
+              const container = In2iframeswitch.closest(
+                  event.target as HTMLElement,
+                  '[data-iframeswitch-src]',
+              );
 
-          const currentCookies = CookieManager.getCookie(this.cookieName);
+              if (!container) return;
 
-          if (currentCookies === '*') {
-            return;
-          }
+              const currentCookies = CookieManager.getCookie(this.cookieName);
 
-          const newCookie = In2iframeswitch.extractHostname(
-            container.getAttribute('data-iframeswitch-src')
-          );
+              if (currentCookies === '*') {
+                return;
+              }
 
-          CookieManager.setCookie({
-            name: this.cookieName,
-            value: currentCookies.length > 0 ? `${currentCookies},${newCookie}` : newCookie,
-            expirationYears: this.expirationYears,
-          })
+              const url = container.getAttribute('data-iframeswitch-src');
+              if (!url) return;
 
-          this.autoEnableIframes();
-        },
-      );
+              const newCookie = In2iframeswitch.extractHostname(url);
+
+              CookieManager.setCookie({
+                name: this.cookieName,
+                value: currentCookies.length > 0 ? `${currentCookies},${newCookie}` : newCookie,
+                expirationYears: this.expirationYears,
+              })
+
+              this.autoEnableIframes();
+            },
+        );
+      }
     });
   }
 
@@ -128,6 +139,7 @@ class In2iframeswitch {
       'msMatchesSelector',
       'oMatchesSelector',
     ].some((fn) => {
+      // @ts-ignore
       if (typeof document.body[fn] === 'function') {
         matchesFn = fn;
         return true;
@@ -139,7 +151,9 @@ class In2iframeswitch {
 
     // traverse parents
     while (element) {
+      // @ts-ignore
       parent = element.parentElement;
+      // @ts-ignore
       if (parent && parent[matchesFn](selector)) {
         return parent;
       }
@@ -150,7 +164,7 @@ class In2iframeswitch {
   }
 
   private static getAllDataAttributes(container: HTMLElement): IframeDataAttribute[] {
-    const attributes = [];
+    const attributes: {name: string, value: string}[] = [];
 
     Array.from(container.attributes).forEach((attribute) => {
       if (attribute.name.indexOf('data-iframeswitch-') !== -1) {
@@ -176,7 +190,7 @@ class In2iframeswitch {
     hostname = hostname.split(':')[0];
     hostname = hostname.split('?')[0];
 
-    return hostname;
+    return hostname || '';
   }
 
   /**

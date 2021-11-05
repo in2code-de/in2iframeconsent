@@ -1,7 +1,11 @@
+declare global {
+  interface Window { iframeswitch: any; }
+}
+
 export interface Cookie {
   name: string;
   value: string;
-  expirationYears?: number | null;
+  expirationYears: number;
 }
 
 export interface IframeDataAttribute {

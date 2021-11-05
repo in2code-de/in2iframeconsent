@@ -3,17 +3,16 @@
   "type": "module",
   "version": "3.0.0",
   "source": "src/index.ts",
-  "exports": {
-    "require": "./dist/require.cjs",
-    "default": "./dist/in2iframeconsent.modern.js"
-  },
-  "main": "./dist/in2iframeconsent.js",
-  "umd:main": "in2iframeconsent.js",
-  "module": "./dist/in2iframeconsent.esm.js",
-  "unpkg": "./dist/in2iframeconsent.umd.js",
+  "main": "dist/in2iframeconsent.js",
+  "exports": "./dist/in2iframeconsent.modern.js",
+  "module": "dist/in2iframeconsent.module.js",
+  "unpkg": "dist/in2iframeconsent.umd.js",
+  "iife": "dist/in2iframeconsent.iife.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prebuild": "rm -rf dist --silent",
-    "build": "microbundle --format esm,umd",
+    "build": "microbundle",
+    "postbuild": "microbundle -i src/index.ts -o dist/moduleraid.iife.js --name in2iframeconsent --no-pkg-main -f iife",
     "dev": "microbundle watch",
     "lint": "eslint src --ext .js,.ts"
   },

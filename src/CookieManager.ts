@@ -3,7 +3,9 @@ import { Cookie } from './types';
 export default class CookieManager {
   public static getCookie(name: string): string {
     const b = document.cookie.match(`(^|;)\\s*${name}\\s*=\\s*([^;]+)`);
-    return b ? b.pop() : '';
+
+    if (b) return b.pop() || '';
+    return '';
   }
 
   public static setCookie({ name, value, expirationYears }: Cookie): void {
