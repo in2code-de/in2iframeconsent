@@ -9,18 +9,9 @@ in2iframeswitch is a consent management solution developed by in2code to load iF
 in2iframeconsent enables the display of an iFrame Consent Banner.
 After the page visitor agrees, the Consent banner is then replaced with the correct iFrame.
 
-### Documentation information
-
-In version 3, in2iframeconsent was ported to TypeScript. The advantage of this is type safety during development.
-
 ## Installation
 
 ### NPM
-
-> **Info**: At the time of writing this documentation, this installation method has not been used at all, if at all. If
-problems occur, please contact Andreas or Felix for support!
-
-Since version 3.0.0 there is the possibility to install in2iframeconsent also via npm as ES module.
 
 ```shell
 # latest stable
@@ -30,9 +21,7 @@ $ npm i in2iframeconsent
 After that you can use the following JavaScript in the project:
 
 ```js
-import in2iframeconsent from 'in2iframeconsent';
-
-new in2iframeconsent();
+import('in2iframeconsent');
 ```
 
 ### Classic
@@ -66,9 +55,4 @@ window.in2iframeconsent.enableAll();
 #### Disable all iFrames
 ```javascript
 window.in2iframeconsent.disableAll();
-```
-
-#### Output current in2iframeswitch version to console
-```javascript
-window.in2iframeconsent.getVersion();
 ```
