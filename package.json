@@ -7,11 +7,13 @@
     "require": "./dist/require.cjs",
     "default": "./dist/in2iframeconsent.modern.js"
   },
-  "main": "./dist/in2iframeconsent.cjs",
-  "module": "./dist/in2iframeconsent.module.js",
+  "main": "./dist/in2iframeconsent.js",
+  "umd:main": "in2iframeconsent.js",
+  "module": "./dist/in2iframeconsent.esm.js",
   "unpkg": "./dist/in2iframeconsent.umd.js",
   "scripts": {
-    "build": "microbundle",
+    "prebuild": "rm -rf dist --silent",
+    "build": "microbundle --format esm,umd",
     "dev": "microbundle watch",
     "lint": "eslint src --ext .js,.ts"
   },

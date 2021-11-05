@@ -1,4 +1,3 @@
-import './assets/sass/styles.scss';
 import { IframeDataAttribute } from './types';
 import CookieManager from './CookieManager';
 
