@@ -4,6 +4,7 @@ import CookieManager from './CookieManager';
 
 class In2iframeswitch {
   private _cookieName: string = 'iframeswitch';
+
   private _expirationYears: number = 10;
 
   constructor() {
@@ -51,7 +52,7 @@ class In2iframeswitch {
         return;
       }
 
-      const iframeURL:string | null = element.getAttribute('data-iframeswitch-src');
+      const iframeURL: string | null = element.getAttribute('data-iframeswitch-src');
 
       if (iframeURL) {
         const iframeSource = In2iframeswitch._extractHostname(iframeURL);
@@ -72,14 +73,16 @@ class In2iframeswitch {
   private static _addDomainInformation(): void {
     const elements = document.querySelectorAll<HTMLElement>('[data-iframeswitch-uri]');
     elements.forEach((element) => {
+      const iframeSwitchUri = element;
+
       const parent = In2iframeswitch._closest(
-          element,
-          '[data-iframeswitch-src]',
+        iframeSwitchUri,
+        '[data-iframeswitch-src]',
       );
 
       if (parent) {
         const parentSrc = parent.getAttribute('data-iframeswitch-src') || 'error, domain not found';
-        element.innerHTML = In2iframeswitch._extractHostname(parentSrc);
+        iframeSwitchUri.innerHTML = In2iframeswitch._extractHostname(parentSrc);
       }
     });
   }
@@ -92,30 +95,30 @@ class In2iframeswitch {
 
       if (elementStart) {
         elementStart.addEventListener(
-            'click',
-            (event) => {
-              const currentCookies = CookieManager._getCookie(this._cookieName);
-              if (currentCookies === '*') return;
+          'click',
+          (event) => {
+            const currentCookies = CookieManager._getCookie(this._cookieName);
+            if (currentCookies === '*') return;
 
-              const container = In2iframeswitch._closest(
-                  event.target as HTMLElement,
-                  '[data-iframeswitch-src]',
-              );
-              if (!container) return;
+            const container = In2iframeswitch._closest(
+              event.target as HTMLElement,
+              '[data-iframeswitch-src]',
+            );
+            if (!container) return;
 
-              const iframeSwitchURL = container.getAttribute('data-iframeswitch-src');
-              if (!iframeSwitchURL) return;
+            const iframeSwitchURL = container.getAttribute('data-iframeswitch-src');
+            if (!iframeSwitchURL) return;
 
-              const newCookie = In2iframeswitch._extractHostname(iframeSwitchURL);
+            const newCookie = In2iframeswitch._extractHostname(iframeSwitchURL);
 
-              CookieManager._setCookie({
-                name: this._cookieName,
-                value: currentCookies.length > 0 ? `${currentCookies},${newCookie}` : newCookie,
-                expirationYears: this._expirationYears,
-              })
+            CookieManager._setCookie({
+              name: this._cookieName,
+              value: currentCookies.length > 0 ? `${currentCookies},${newCookie}` : newCookie,
+              expirationYears: this._expirationYears,
+            });
 
-              this._autoEnableIframes();
-            },
+            this._autoEnableIframes();
+          },
         );
       }
     });
@@ -153,6 +156,8 @@ class In2iframeswitch {
       if (parent && parent[matchesFn](selector)) {
         return parent;
       }
+
+      // eslint-disable-next-line no-param-reassign
       element = parent;
     }
 
@@ -160,7 +165,7 @@ class In2iframeswitch {
   }
 
   private static _getAllDataAttributes(container: HTMLElement): IframeDataAttribute[] {
-    const attributes: {name: string, value: string}[] = [];
+    const attributes: { name: string, value: string }[] = [];
 
     Array.from(container.attributes).forEach((attribute) => {
       if (attribute.name.indexOf('data-iframeswitch-') !== -1) {
@@ -178,13 +183,13 @@ class In2iframeswitch {
     let hostname: string;
 
     if (url.indexOf('//') > -1) {
-      hostname = url.split('/')[2];
+      hostname = url.split('/')[2]; // eslint-disable-line prefer-destructuring
     } else {
-      hostname = url.split('/')[0];
+      hostname = url.split('/')[0]; // eslint-disable-line prefer-destructuring
     }
 
-    hostname = hostname.split(':')[0];
-    hostname = hostname.split('?')[0];
+    hostname = hostname.split(':')[0]; // eslint-disable-line prefer-destructuring
+    hostname = hostname.split('?')[0]; // eslint-disable-line prefer-destructuring
 
     return hostname || '';
   }
@@ -209,7 +214,8 @@ class In2iframeswitch {
     CookieManager._deleteCookie(this._cookieName);
   }
 
-  public getVersion(): void {
+  public static getVersion(): void {
+    // eslint-disable-next-line no-console
     console.log(`in2iframeconsent is running on version ${version} 🌈`);
   }
 }
