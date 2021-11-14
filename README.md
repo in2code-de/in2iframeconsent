@@ -1,59 +1,61 @@
 
-<p align="center"><a href="#">
-    <img width=35% alt="in2code logo" src="https://raw.githubusercontent.com/in2code-de/in2iframeconsent/feature/typescript-rewrite/src/assets/images/in2code-logo.png">
-</a></p>
+<p align="center">
+	<a href="https://www.in2code.de/en/">
+	    <img 
+	    width=35% 
+	    alt="in2code logo" 
+	    src="https://raw.githubusercontent.com/in2code-de/in2iframeconsent/feature/typescript-rewrite/src/assets/images/in2code-logo.png"
+	    >
+	</a>
+</p>
 
 ## What is in2iframeswitch?
 
-in2iframeswitch is a consent management solution developed by in2code to load iFrames only after a page visitor's consent.
+in2iframeswitch is a TYPO3 consent management solution developed by [in2code](https://www.in2code.de/en/) to load iFrames only after a page visitor's consent.
 
 in2iframeconsent enables the display of an iFrame Consent Banner.
 After the page visitor agrees, the Consent banner is then replaced with the correct iFrame.
 
-## Installation
+---
 
-### NPM
+## Getting Started
+
+### Installation
 
 ```shell
-# latest stable
 $ npm i in2iframeconsent
 ```
 
-After that you can use the following JavaScript in the project:
+### JavaScript
 
 ```js
 import('in2iframeconsent');
 ```
 
-### Classic
-
-For projects that do not yet have a build toolchain for modern JavaScript, the classic way is to use a JavaScript file
-which is statically included in a project.
-
-For this you can simply download a release build of in2iframeconsent from the
-[Releases](https://gitlab.in2code.de/in2code-Team/in2cookiemodal/-/releases) page from the GitLab repository.
-
-This file can then simply be included in the page with a `script` tag.
-
-## Getting Started
+* ```window.iframeSwitch.enableAll()``` - enable all iFrames
+* ```window.iframeSwitch.disableAll()``` - disable all iFrames
+* ```window.iframeSwitch.getVersion()``` - get current in2iframeconsent version
 
 ### Styling
 in2iframeconsent provides predefined styling for the consent boxes.
-We recommend to use in2iframeconsent in combination with a CSS compiler like SCSS.
+We recommend using this styling as a base for your own implementation.
 
-An exemplary integration of the required CSS files via SCSS can be found [here]().
+You can find the CSS here:  ```dist/css/in2iframeconsent.css```
 
-### Additional functions
+### TYPO3 Viewhelper
+Define the [in2iframeconsent viewhelper](examples/viewhelpers/IFrameSwitchViewHelper.php) in your TYPO3 extension folder and change the namespace.
 
-The in2iframeconsent configuration is stored under ```window.iframeSwitch``` after successful initialization.
-Additional functions can be accessed from here.
+### TYPO3 Template
+Wrap the viewhelper around your iFrame(s). In our [example](examples/templates/base.html) its a YouTube iFrame. 
 
-#### Enable all iFrames
-```javascript
-window.iframeSwitch.enableAll();
-```
+### Consent Box
+In the template file you specify the partial of the consent box.
+Now you have to create the partial for correct rendering. 
+An example integration can be found [here](examples/partials/consentbox.html).
 
-#### Disable all iFrames
-```javascript
-window.iframeSwitch.disableAll();
-```
+### Translations
+As a last step, you should translate the consent box. 
+We provided a exemplary translations in this [folder](examples/language).
+
+Please review the texts before using them in any project, 
+because they´re only an example.
