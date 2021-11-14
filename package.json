@@ -17,7 +17,7 @@
     "build": "npm-run-all build:js build:css",
     "build:js": "microbundle",
     "postbuild:js": "microbundle -i src/index.ts -o dist/js/moduleraid.iife.js --name in2iframeconsent --no-pkg-main -f iife",
-    "build:css": "sass src/assets/sass/styles.scss dist/styles/in2iframeconsent.css --style compressed",
+    "build:css": "sass src/assets/sass/styles.scss dist/css/in2iframeconsent.css --style compressed",
     "lint": "eslint src --ext .js,.ts",
     "watch:js": "microbundle watch",
     "watch:scss": "sass --watch src/assets/sass/styles.scss dist/styles/in2iframeconsent.css --style compressed"
