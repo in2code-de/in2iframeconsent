@@ -33,7 +33,7 @@ import('in2iframeconsent');
 ```
 
 * ```window.iframeSwitch.enableAll()``` - enable all iFrames
-* ```window.iframeSwitch.disableAll()``` - disable all iFrames
+* ```window.iframeSwitch.disableAll()``` - disable all iFrames (after reload)
 * ```window.iframeSwitch.getVersion()``` - get current in2iframeconsent version
 
 ### Styling
