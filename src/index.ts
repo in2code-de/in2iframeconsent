@@ -180,16 +180,12 @@ class In2iframeswitch {
   }
 
   private static _extractHostname(url: string): string {
-    let hostname: string;
+    let hostname: string = (url.indexOf('//') > -1)
+      ? url.split('/')[2]
+      : url.split('/')[0];
 
-    if (url.indexOf('//') > -1) {
-      hostname = url.split('/')[2]; // eslint-disable-line prefer-destructuring
-    } else {
-      hostname = url.split('/')[0]; // eslint-disable-line prefer-destructuring
-    }
-
-    hostname = hostname.split(':')[0]; // eslint-disable-line prefer-destructuring
-    hostname = hostname.split('?')[0]; // eslint-disable-line prefer-destructuring
+    hostname = hostname.split(':').shift() as string;
+    hostname = hostname.split('?').shift() as string;
 
     return hostname || '';
   }
