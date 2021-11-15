@@ -32,9 +32,11 @@ $ npm i in2iframeconsent
 import('in2iframeconsent');
 ```
 
-* ```window.iframeSwitch.enableAll()``` - accept all iFrame consent boxes
-* ```window.iframeSwitch.disableAll()``` - 	Reset all iFrame consent boxes (after reload)
-* ```window.iframeSwitch.getVersion()``` - get current in2iframeconsent version
+```window.iframeSwitch.enableAll()``` - accept all iFrame consent boxes
+
+```window.iframeSwitch.disableAll()``` - 	reset all iFrame consent boxes (after reload)
+
+```window.iframeSwitch.getVersion()``` - get current in2iframeconsent version
 
 ### Styling
 in2iframeconsent provides predefined styling for the consent boxes.
