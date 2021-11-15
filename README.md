@@ -1,17 +1,6 @@
+# in2iframeconsent
 
-<p align="center">
-	<a href="https://www.in2code.de/en/">
-	    <img 
-	    width=35% 
-	    alt="in2code logo" 
-	    src="https://raw.githubusercontent.com/in2code-de/in2iframeconsent/develop/src/assets/images/in2code-logo.png"
-	    >
-	</a>
-</p>
-
-## What is in2iframeswitch?
-
-in2iframeswitch is a TYPO3 consent management solution developed by [in2code](https://www.in2code.de/en/) to load iFrames only after a page visitor's consent.
+in2iframeconsent is a TYPO3 consent management solution developed by [in2code](https://www.in2code.de/en/) to load iFrames only after a page visitor's consent.
 
 in2iframeconsent enables the display of an iFrame consent banner.
 After the page visitor agrees, the consent banner is then replaced with the correct iFrame.
