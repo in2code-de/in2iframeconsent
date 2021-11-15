@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "strict": true,
+  },
+  "exclude": [
+    "**/*.spec.ts",
+    "node_modules"
+  ],
+}

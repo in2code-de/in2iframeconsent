@@ -1,0 +1,9 @@
+/*------------------------------------*\
+  #FUNCTIONS
+\*------------------------------------*/
+
+@use "sass:math";
+
+@function in2-convert-px-to-rem($pixelValue, $base: 16) {
+  @return (math.div($pixelValue, $base)) + rem;
+}
