@@ -1,9 +1,10 @@
 {
   "name": "in2iframeconsent",
   "type": "module",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "source": "src/index.ts",
-  "main": "dist/js/in2iframeconsent.js",
+  "main": "dist/js/moduleraid.iife.js",
+  "style": "dist/css/in2iframeconsent.css",
   "exports": "./dist/js/in2iframeconsent.modern.js",
   "module": "dist/js/in2iframeconsent.module.js",
   "unpkg": "dist/js/in2iframeconsent.umd.js",
@@ -43,4 +44,3 @@
   },
   "homepage": "https://github.com/in2code-de/in2iframeconsent#readme"
 }
-
