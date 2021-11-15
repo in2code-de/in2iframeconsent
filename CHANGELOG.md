@@ -1,4 +1,15 @@
 # Change Log
+## [3.0.0] - 2021-11-15
+* in2iframeconsent is now available on npmjs.com ( [Download](("https://www.npmjs.com/package/in2iframeconsent")) )
+* in2iframeconsent was rewritten in Typescript
+* Documentation rewrite
+* ESLINT implementation
+* in2iframeconsent now exports multiple js file types
+* Port CSS files to .scss
+* Change project file structure
+
+**IMPORTANT:** in2iframeconsent is fully compatible with old implementations.
+
 ## [2.0.0] - 2020-04-17
 
 ### !!! BREAKING CHANGE!!!!!
