@@ -32,15 +32,15 @@ $ npm i in2iframeconsent
 import('in2iframeconsent');
 ```
 
-* ```window.iframeSwitch.enableAll()``` - enable all iFrames
-* ```window.iframeSwitch.disableAll()``` - disable all iFrames (after reload)
+* ```window.iframeSwitch.enableAll()``` - accept all iFrame consent boxes
+* ```window.iframeSwitch.disableAll()``` - 	Reset all iFrame consent boxes (after reload)
 * ```window.iframeSwitch.getVersion()``` - get current in2iframeconsent version
 
 ### Styling
 in2iframeconsent provides predefined styling for the consent boxes.
 We recommend using this styling as a base for your own implementation.
 
-You can find the CSS here:  ```dist/css/in2iframeconsent.css```
+You can find the CSS [here](dist/css/in2iframeconsent.css).
 
 ### TYPO3 Viewhelper
 Define the [in2iframeconsent viewhelper](examples/viewhelpers/IFrameSwitchViewHelper.php) in your TYPO3 extension folder and change the namespace.
@@ -57,5 +57,5 @@ An example integration can be found [here](examples/partials/consentbox.html).
 As a last step, you should translate the consent box. 
 We provided a exemplary translations in this [folder](examples/language).
 
-Please review the texts before using them in any project, 
-because they´re only an example.
+*Please review the texts before using them in any project, 
+because they´re only an example.*
