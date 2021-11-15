@@ -4,7 +4,7 @@
 	    <img 
 	    width=35% 
 	    alt="in2code logo" 
-	    src="https://raw.githubusercontent.com/in2code-de/in2iframeconsent/feature/typescript-rewrite/src/assets/images/in2code-logo.png"
+	    src="https://raw.githubusercontent.com/in2code-de/in2iframeconsent/develop/src/assets/images/in2code-logo.png"
 	    >
 	</a>
 </p>
