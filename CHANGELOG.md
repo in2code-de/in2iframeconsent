@@ -7,6 +7,7 @@
 * in2iframeconsent now exports multiple js file types
 * Port CSS files to .scss
 * Change project file structure
+* Cookie duration was decreased from 10 years to 3 months
 
 **IMPORTANT:** in2iframeconsent is fully compatible with old implementations.
 
