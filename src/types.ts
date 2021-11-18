@@ -5,7 +5,7 @@ declare global {
 export interface Cookie {
   name: string;
   value: string;
-  expirationYears: number;
+  expirationMonths: number;
 }
 
 export interface IframeDataAttribute {

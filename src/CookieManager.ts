@@ -8,11 +8,11 @@ export default class CookieManager {
     return '';
   }
 
-  public static _setCookie({ name, value, expirationYears }: Cookie): void {
+  public static _setCookie({ name, value, expirationMonths }: Cookie): void {
     const domain = window.location.hostname;
 
     const expirationDate = new Date();
-    expirationDate.setFullYear(expirationDate.getFullYear() + expirationYears);
+    expirationDate.setMonth(expirationDate.getMonth() + expirationMonths);
     const expirationDateString = expirationDate.toUTCString();
 
     document.cookie = `${name}=${value};expires=${expirationDateString};domain=${domain};path=/;SameSite=None;secure`;
@@ -22,7 +22,7 @@ export default class CookieManager {
     this._setCookie({
       name,
       value: '',
-      expirationYears: -1,
+      expirationMonths: -1,
     });
   }
 }

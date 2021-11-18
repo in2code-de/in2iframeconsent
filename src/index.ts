@@ -5,7 +5,7 @@ import CookieManager from './CookieManager';
 class In2iframeswitch {
   private _cookieName: string = 'iframeswitch';
 
-  private _expirationYears: number = 10;
+  private _expirationMonths: number = 10;
 
   constructor() {
     this._addButtonEvents();
@@ -114,7 +114,7 @@ class In2iframeswitch {
             CookieManager._setCookie({
               name: this._cookieName,
               value: currentCookies.length > 0 ? `${currentCookies},${newCookie}` : newCookie,
-              expirationYears: this._expirationYears,
+              expirationMonths: this._expirationMonths,
             });
 
             this._autoEnableIframes();
@@ -197,7 +197,7 @@ class In2iframeswitch {
     CookieManager._setCookie({
       name: this._cookieName,
       value: '*',
-      expirationYears: this._expirationYears,
+      expirationMonths: this._expirationMonths,
     });
 
     this._autoEnableIframes();
