@@ -5,7 +5,7 @@ import CookieManager from './CookieManager';
 class In2iframeswitch {
   private _cookieName: string = 'iframeswitch';
 
-  private _expirationMonths: number = 10;
+  private _expirationMonths: number = 3;
 
   constructor() {
     this._addButtonEvents();
