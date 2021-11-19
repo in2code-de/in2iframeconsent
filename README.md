@@ -31,7 +31,7 @@ import('in2iframeconsent');
 
 ### Configuration:
 You have the option to adjust the cookie name and storage duration of the in2iframeswitch. 
-For this purpose, the following configuration object must be created before the in2iframeswitch initialization.
+For this purpose, the following configuration object must be created before the in2iframeswitch code is loaded.
 
 ```js
 window.iframeSwitchConfig = Object.freeze({
