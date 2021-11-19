@@ -7,12 +7,12 @@ class In2iframeswitch {
 
   private _expirationMonths: number = 3;
 
+  private _version: string = version;
+
   constructor() {
     this._addButtonEvents();
     this._autoEnableIframes();
     In2iframeswitch._addDomainInformation();
-
-    window.iframeSwitch = this || {};
   }
 
   /**
@@ -210,11 +210,10 @@ class In2iframeswitch {
     CookieManager._deleteCookie(this._cookieName);
   }
 
-  public static getVersion(): void {
+  public getVersion(): void {
     // eslint-disable-next-line no-console
-    console.log(`in2iframeconsent is running on version ${version} 🌈`);
+    console.log(`in2iframeconsent is running on version ${this._version} 🌈`);
   }
 }
 
-// eslint-disable-next-line no-new
-new In2iframeswitch();
+window.iframeSwitch = new In2iframeswitch();

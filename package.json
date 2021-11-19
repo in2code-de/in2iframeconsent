@@ -1,23 +1,18 @@
 {
   "name": "in2iframeconsent",
   "type": "module",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "source": "src/index.ts",
   "main": "dist/js/moduleraid.iife.js",
   "style": "dist/css/in2iframeconsent.css",
-  "exports": "./dist/js/in2iframeconsent.modern.js",
-  "module": "dist/js/in2iframeconsent.module.js",
-  "unpkg": "dist/js/in2iframeconsent.umd.js",
-  "iife": "dist/js/in2iframeconsent.iife.js",
-  "types": "dist/js/index.d.ts",
   "mangle": {
     "regex": "^_"
   },
   "scripts": {
+    "prepublishOnly": "npm run build",
     "prebuild": "rm -rf dist --silent",
     "build": "npm-run-all build:js build:css",
-    "build:js": "microbundle",
-    "postbuild:js": "microbundle -i src/index.ts -o dist/js/moduleraid.iife.js --name in2iframeconsent --no-pkg-main -f iife",
+    "build:js": "microbundle -i src/index.ts -o dist/js/moduleraid.iife.js --name in2iframeconsent --no-pkg-main -f iife",
     "build:css": "sass src/assets/sass/styles.scss dist/css/in2iframeconsent.css --style compressed",
     "lint": "eslint src --ext .js,.ts",
     "watch:js": "microbundle watch",
