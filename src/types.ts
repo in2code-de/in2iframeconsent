@@ -1,5 +1,11 @@
 declare global {
-  interface Window { iframeSwitch: any; }
+  interface Window {
+    iframeSwitch: any,
+    iframeSwitchConfig: {
+      cookieName: string,
+      expirationMonths: number,
+    },
+  }
 }
 
 export interface Cookie {

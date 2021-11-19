@@ -10,9 +10,19 @@ class In2iframeswitch {
   private _version: string = version;
 
   constructor() {
+    this._configurationLoader();
     this._addButtonEvents();
     this._autoEnableIframes();
     In2iframeswitch._addDomainInformation();
+  }
+
+  private _configurationLoader(): void {
+    if (!window.iframeSwitchConfig) return;
+
+    const configObject = window.iframeSwitchConfig;
+
+    this._cookieName = configObject.cookieName || this._cookieName;
+    this._expirationMonths = configObject.expirationMonths || this._expirationMonths;
   }
 
   /**
