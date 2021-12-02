@@ -1,7 +1,7 @@
 {
   "name": "in2iframeconsent",
   "type": "module",
-  "version": "3.0.3",
+  "version": "3.0.0",
   "source": "src/index.ts",
   "main": "dist/js/moduleraid.iife.js",
   "style": "dist/css/in2iframeconsent.css",
