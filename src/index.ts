@@ -121,11 +121,13 @@ class In2iframeswitch {
 
             const newCookie = In2iframeswitch._extractHostname(iframeSwitchURL);
 
-            CookieManager._setCookie({
-              name: this._cookieName,
-              value: currentCookies.length > 0 ? `${currentCookies},${newCookie}` : newCookie,
-              expirationMonths: this._expirationMonths,
-            });
+            if (!currentCookies.split(',').includes(newCookie)) {
+              CookieManager._setCookie({
+                name: this._cookieName,
+                value: currentCookies.length > 0 ? `${currentCookies},${newCookie}` : newCookie,
+                expirationMonths: this._expirationMonths,
+              });
+            }
 
             this._autoEnableIframes();
           },
