@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace In2code\In2template\ViewHelpers;
+namespace In2code\In2iframeconsent\ViewHelpers;
 
 use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 

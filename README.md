@@ -1,62 +1,85 @@
 # in2iframeconsent
 
-## Inhaltsverzeichnis
+in2iframeconsent is a TYPO3 consent management solution developed by [in2code](https://www.in2code.de/en/) to load iFrames only after a page visitor's consent.
 
-- [Einrichtung](Documentation/Einrichtung.md)
-- [Frontend Toolchain](Documentation/Frontend.md)
-- [Verwendung TYPO3](Documentation/TYPO3_Viewhelper.md)
+in2iframeconsent enables the display of an iFrame consent banner.
+After the page visitor agrees, the consent banner is then replaced with the correct iFrame.
 
-## Erklärung
-Mit unserem in2iframeconsent wird verhindert, dass IFrames ohne Zustimmung des Benutzer geladen werden. 
+---
 
-Wichtig hierbei ist, dass wir das laden von IFrames auch verhindern, wenn Javascript deaktiviert ist.
+## Getting Started
 
-## Funktion
-**IFrame Akzeptieren (einzeln):**
-Wird ein IFrame akzeptiert, wird ein Cookie  mit dem namen "*iframeswitch*" gesetzt. In diesem Cookie wird die Domaine des aktuell akzeptierten Iframes gespeichert. 
-  Anhand dieser Domain, werden auch alle IFrames freigeben, die von der selben Domain kommen. IFrames von einer anderen Domaine werden nicht Freigegeben. 
-  
-  Wird ein IFrame einer anderen Domaine akzeptiert, wird das gesetzte Cookie um die jeweilige Domain erweitert, und gibt dementsprechend auch die IFrames frei, welche von der neu gesetzten Domaine kommen.
-  
-**IFrame Akzeptieren (alle):**
-Das in2iframeconsent verfügt über eine *enableAll()*-Funktion. Mit dieser Funktion können, z.b. über unser Cookie-Modal, gleichzeitig alle IFrames auf der Website freigeben werden.  (Eine Beschreibung hierfür ist zu finden unter [Einrichtung](Documentation/Einrichtung.md) -> **enableAll()-Funktion Bereitstellen**.)
+### Installation
 
-# Change Log
-## [2.0.0] - 2020-04-17
-  
-### !!! BREAKING CHANGE!!!!!
+```shell
+$ npm i in2iframeconsent
+```
 
-### Changed
-  
-- [in2iframeconsent.js](src/Private/JavaScripts/in2iframeconsent.js)
+### JavaScript
 
-  Das resultat von IFrameswitch() wird nun nicht mehr in einer Variable gespeichert, sondern in "window".
-  
-  [Einrichtung](Documentation/Einrichtung.md)
-  
-  Der Aufruf der enableAll()-Funktion, z.b. über das Cookie-Modal hat sich, geändert.
+```js
+import('in2iframeconsent');
+```
 
-## [2.0.1] - 2020-04-20
+```window.iframeSwitch.enableAll()``` - accept all iFrame consent boxes
 
-### Added
+```window.iframeSwitch.disableAll()``` - reset all iFrame consent boxes (after reload)
 
- Beim anlegen eines Cookies, wird nun über den Code die aktuelle Domaine dem Cookie hinzugefügt. 
- 
- Normalerweise geschieht dies automatisch beim setzen eines Cookies über "document.cookie", nur lässt sich hiermit ein schon gesetzes Cookie über unser Cookie-Modal nicht mehr löschen.
+```window.iframeSwitch.getVersion()``` - get current in2iframeconsent version
 
-## [2.0.2] - 2021-06-25
+---
 
-### Changed
-Die Default Cookiedauer war leicht unpräzise, dies wurde jetzt gefixed. 
+### Configuration:
+You have the option to adjust the cookie name and storage duration of the in2iframeswitch. 
+For this purpose, the following configuration object must be created before the in2iframeswitch code is loaded.
 
-## [2.0.3] - 2021-10-19
+```js
+window.iframeSwitchConfig = Object.freeze({
+    'cookieName': 'myCustomCookieName',
+    'expirationMonths': 12,
+});
+```
 
-### Added
+in2iframeconsent also works without prior configuration.
+The following default values are configured:
 
- Samesite = None und Secure attribut wurden dem Cookie hinzugefügt. 
+```json
+{
+    "cookieName": "iframeswitch",
+    "expirationMonths": 3
+}
+```
 
-## [2.0.4] - 2021-10-20
+---
 
-### Changed
+### Styling
+in2iframeconsent provides predefined styling for the consent boxes.
+We recommend using this styling as a base for your own implementation.
 
-Cookie expirationDate wurde falsch berechnet, dies wurde jetzt gefixed.  
+You can find the CSS [here](dist/css/in2iframeconsent.css).
+
+---
+
+### TYPO3 Viewhelper
+Define the [in2iframeconsent viewhelper](examples/viewhelpers/IFrameSwitchViewHelper.php) in your TYPO3 extension folder and change the namespace.
+
+---
+
+### TYPO3 Template
+Wrap the viewhelper around your iFrame(s). In our [example](examples/templates/base.html) its a YouTube iFrame. 
+
+---
+
+### Consent Box
+In the template file you specify the partial of the consent box.
+Now you have to create the partial for correct rendering. 
+An example integration can be found [here](examples/partials/consentbox.html).
+
+---
+
+### Translations
+As a last step, you should translate the consent box. 
+We provided a exemplary translations in this [folder](examples/language).
+
+*Please review the texts before using them in any project, 
+because they´re only an example.*
