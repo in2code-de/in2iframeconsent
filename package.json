@@ -16,7 +16,8 @@
     "build:css": "sass src/assets/sass/styles.scss dist/css/in2iframeconsent.css --style compressed",
     "lint": "eslint src --ext .js,.ts",
     "watch:js": "microbundle watch",
-    "watch:scss": "sass --watch src/assets/sass/styles.scss dist/styles/in2iframeconsent.css --style compressed"
+    "watch:scss": "sass --watch src/assets/sass/styles.scss dist/styles/in2iframeconsent.css --style compressed",
+    "test": "echo \"No test specified\""
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.33.0",
@@ -25,6 +26,7 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-airbnb-typescript": "^14.0.1",
     "microbundle": "^0.14.1",
+    "np": "^7.6.0",
     "npm-run-all": "^4.1.5",
     "sass": "^1.43.4",
     "typescript": "^4.4.4"
