@@ -1,4 +1,7 @@
-# Change Log
+# Changelog
+## [3.0.5] - 2021-12-03
+* Simplify release process for npmjs.com and GitHub
+
 ## [3.0.4] - 2021-12-03
 * Publish new version on npmjs.com
 
