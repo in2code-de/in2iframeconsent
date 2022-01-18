@@ -9,4 +9,4 @@ After the page visitor agrees, the consent banner is then replaced with the corr
 
 ## Getting Started
 
-To check out the documentation visit 
+To check out the documentation visit [https://in2iframeconsent.netlify.app/](https://in2iframeconsent.netlify.app/)
