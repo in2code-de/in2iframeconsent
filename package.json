@@ -1,6 +1,6 @@
 {
   "name": "in2iframeconsent",
-  "type": "module",
+  "type": "commonjs",
   "version": "3.0.7",
   "source": "src/index.ts",
   "main": "dist/js/moduleraid.iife.js",
@@ -14,10 +14,11 @@
     "build": "npm-run-all build:js build:css",
     "build:js": "microbundle -i src/index.ts -o dist/js/moduleraid.iife.js --name in2iframeconsent --no-pkg-main -f iife",
     "build:css": "sass src/assets/sass/styles.scss dist/css/in2iframeconsent.css --style compressed",
+    "build:docs": "vuepress build docs",
     "lint": "eslint src --ext .js,.ts",
     "watch:js": "microbundle watch",
     "watch:scss": "sass --watch src/assets/sass/styles.scss dist/styles/in2iframeconsent.css --style compressed",
-    "test": "echo \"No test specified\""
+    "docs:serve": "vuepress dev docs"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.33.0",
@@ -29,7 +30,8 @@
     "np": "^7.6.0",
     "npm-run-all": "^4.1.5",
     "sass": "^1.43.4",
-    "typescript": "^4.4.4"
+    "typescript": "^4.4.4",
+    "vuepress": "^1.9.7"
   },
   "repository": {
     "type": "git",
