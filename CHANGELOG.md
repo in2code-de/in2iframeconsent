@@ -1,5 +1,5 @@
 # Changelog
-## [3.0.7] - 2021-12-03
+## [3.0.8] - 2021-12-03
 * Bump nanoid from 3.1.30 to 3.2.0 [SECURITY UPDATE]
 
 ## [3.0.5] - 2021-12-03
