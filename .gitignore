@@ -15,3 +15,5 @@ Thumbs.db
 
 # Node Modules
 node_modules
+
+docs/.vuepress/dist/
