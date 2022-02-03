@@ -40,7 +40,7 @@ in2iframeconsent provides predefined styling for the consent boxes. We recommend
 
 Since in2iframeconsent is a TYPO3 extension, some additional code has to be added.
 
-**The additional files can be easily downloaded [here]().**
+**The additional files can be easily found [here](https://github.com/in2code-de/in2iframeconsent/tree/develop/docs/.downloads/extension).**
 
 #### 1. TYPO3 viewhelper
 Move the **in2iframeconsent viewhelper** from ```Classes/ViewHelpers/IFrameSwitchViewHelper.php``` into your TYPO3 extension folder and change the namespace.
