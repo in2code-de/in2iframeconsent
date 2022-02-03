@@ -2,7 +2,7 @@ module.exports = {
   title: 'in2iframeconsent',
   description: 'in2iframeconsent is a TYPO3 consent management solution developed by in2code to load iFrames only after a page visitor\'s consent.',
   themeConfig: {
-    logo: '/vuepress-logo.png',
+    logo: '/logo-in2code-small.png',
     lastUpdated: 'Last updated',
     repo: 'https://github.com/in2code-de/in2iframeconsent',
     docsDir: 'docs',
@@ -38,12 +38,8 @@ module.exports = {
         text: 'Examples',
         items: [
           {
-            text: 'Dynamic import',
+            text: 'Dynamic imports',
             link: '/examples/#dynamic-import'
-          },
-          {
-            text: 'TYPO3 viewhelper',
-            link: '/examples/#typo3-viewhelper'
           },
         ]
       },
