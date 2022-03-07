@@ -1,4 +1,7 @@
 # Changelog
+## [3.0.9] - 2021-12-03
+* Bump prismjs from 1.26.0 to 1.27.0 [SECURITY UPDATE]
+
 ## [3.0.8] - 2021-12-03
 * Bump nanoid from 3.1.30 to 3.2.0 [SECURITY UPDATE]
 
