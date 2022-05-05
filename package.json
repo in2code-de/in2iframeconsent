@@ -1,7 +1,7 @@
 {
   "name": "in2iframeconsent",
   "type": "commonjs",
-  "version": "3.0.11",
+  "version": "3.0.12",
   "source": "src/index.ts",
   "main": "dist/js/in2iframeconsent.js",
   "style": "dist/css/in2iframeconsent.css",
