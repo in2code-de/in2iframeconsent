@@ -1,9 +1,9 @@
 {
   "name": "in2iframeconsent",
   "type": "commonjs",
-  "version": "3.0.11",
+  "version": "3.0.12",
   "source": "src/index.ts",
-  "main": "dist/js/moduleraid.iife.js",
+  "main": "dist/js/in2iframeconsent.js",
   "style": "dist/css/in2iframeconsent.css",
   "mangle": {
     "regex": "^_"
@@ -12,7 +12,7 @@
     "prepublishOnly": "npm run build",
     "prebuild": "npm install & rm -rf dist --silent",
     "build": "npm-run-all build:js build:css",
-    "build:js": "microbundle -i src/index.ts -o dist/js/moduleraid.iife.js --name in2iframeconsent --no-pkg-main -f iife",
+    "build:js": "microbundle -i src/index.ts --no-pkg-main -f iife",
     "build:css": "sass src/assets/sass/styles.scss dist/css/in2iframeconsent.css --style compressed",
     "build:docs": "vuepress build docs",
     "lint": "eslint src --ext .js,.ts",
