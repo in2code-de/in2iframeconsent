@@ -1,4 +1,7 @@
 # Changelog
+## [3.0.12] - 2022-05-05
+* Change distribution filename to in2iframeconsent.js
+
 ## [3.0.9] - 2021-12-03
 * Bump prismjs from 1.26.0 to 1.27.0 [SECURITY UPDATE]
 
