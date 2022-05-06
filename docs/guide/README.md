@@ -58,7 +58,7 @@ We provided you with an example in ```Resources/Private/Templates/base.html```
 In the template file you specify the partial of the consent box.
 Now you have to create the partial for correct rendering.
 
-An example can be found in ```Resources/Private/Partials/consentbox.html```
+An example can be found in ```Resources/Private/Partials/Consentbox.html```
 
 ---
 

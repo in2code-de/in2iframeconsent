@@ -6,7 +6,7 @@ namespace In2code\In2iframeconsent\ViewHelpers;
 use TYPO3\CMS\Fluid\Core\ViewHelper\AbstractViewHelper;
 
 /**
- * Class OverrideSubheaderPropertyHelper
+ * Class IFrameSwitchViewHelper
  */
 class IFrameSwitchViewHelper extends AbstractViewHelper
 {
@@ -30,9 +30,9 @@ class IFrameSwitchViewHelper extends AbstractViewHelper
     {
         if ($this->isIframeExisting()) {
             return $this->replace();
-        } else {
-            return $this->renderChildren();
         }
+
+        return $this->renderChildren();
     }
 
     /**
