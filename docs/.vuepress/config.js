@@ -1,16 +1,15 @@
+const { defaultTheme } = require('vuepress');
+
 module.exports = {
   title: 'in2iframeconsent',
   description: 'in2iframeconsent is a TYPO3 consent management solution developed by in2code to load iFrames only after a page visitor\'s consent.',
-  theme: '@vuepress/theme-default',
-  themeConfig: {
-    logo: '/logo-in2code-small.png',
+  theme: defaultTheme({
     lastUpdated: 'Last updated',
-    repo: 'https://github.com/in2code-de/in2iframeconsent',
-    docsRepo: 'https://github.com/in2code-de/in2iframeconsent',
     docsBranch: 'develop',
+    docsRepo: 'https://github.com/in2code-de/in2iframeconsent',
     docsDir: 'docs',
-    editLinks: true,
     editLinkText: 'Recommend a change',
+    editLink: true,
     navbar: [
       {
         text: 'Home',
@@ -64,8 +63,5 @@ module.exports = {
         ]
       },
     ],
-    plugins: [
-        '@vuepress/active-header-links',
-    ],
-  }
+  }),
 }
