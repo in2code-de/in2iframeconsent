@@ -6,12 +6,10 @@
 
             <trans-unit id="iframeswitch.header">
                 <source>External Page</source>
-                <target>Externe Seite</target>
             </trans-unit>
 
             <trans-unit id="iframeswitch.consentPart1">
                 <source>To view this content (source:</source>
-                <target>Um diesen Inhalt (Quelle: </target>
             </trans-unit>
 
             <trans-unit id="iframeswitch.consentPart2">
@@ -19,25 +17,18 @@
                         on Accept. We would like to point out that by accepting this iframe, data could be transmitted to third parties or
                         cookies may be stored.
                 </source>
-                <target>) anzuzeigen, klicken Sie bitte
-                        auf Akzeptieren. Wir möchten Sie darauf hinweisen, dass durch das Akzeptieren dieses Iframes Daten an Dritte übermittelt oder
-                        Cookies gespeichert werden könnten.
-                </target>
             </trans-unit>
 
             <trans-unit id="iframeswitch.privacyPolicyText">
                 <source>You can find more information on our</source>
-                <target>Weitere Informationen finden Sie auf unserer</target>
             </trans-unit>
 
             <trans-unit id="iframeswitch.privacyPolicyLink">
                 <source>privacy policy</source>
-                <target>Datenschutzerklärung</target>
             </trans-unit>
 
             <trans-unit id="iframeswitch.accept">
                 <source>Accept</source>
-                <target>Akzeptieren</target>
             </trans-unit>
 
 		</body>
