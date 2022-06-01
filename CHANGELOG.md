@@ -1,4 +1,7 @@
 # Changelog
+## [3.0.16] - 2022-06-01
+* Update npm dependencies
+
 ## [3.0.13] - 2022-05-05
 * Downgrade vuepress to 2.0.0-beta.35, because with newer version the documentation breaks.
 
