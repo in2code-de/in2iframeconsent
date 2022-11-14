@@ -3,7 +3,6 @@ msi.iws
 .idea/
 nbproject/
 
-
 # OS spezielle Dateien
 .DS_Store
 .DS_Store?
@@ -15,7 +14,3 @@ Thumbs.db
 
 # Node Modules
 node_modules
-
-docs/.vuepress/.cache/
-docs/.vuepress/.temp/
-docs/.vuepress/dist/

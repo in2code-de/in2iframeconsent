@@ -1,5 +1,9 @@
 # Changelog
 
+## [4.0.0]
+* Rewrite in2iframeconsent with web components
+* Switch to Vite for local development
+
 ## [3.0.16] - 2022-11-01
 * Remove generic styling from consent box
 
@@ -42,7 +46,7 @@
 
 ### Changed
 
-- [index.ts](src/index.ts)
+- [index.ts](../src/index.ts)
 
   Das resultat von IFrameswitch() wird nun nicht mehr in einer Variable gespeichert, sondern in "window".
 
