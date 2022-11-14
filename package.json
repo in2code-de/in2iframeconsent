@@ -4,16 +4,13 @@
   "version": "3.0.16",
   "source": "src/index.ts",
   "main": "dist/js/in2iframeconsent.js",
-  "mangle": {
-    "regex": "^_"
-  },
   "scripts": {
     "prepublishOnly": "npm run build",
     "prebuild": "npm install & rm -rf dist --silent",
     "build": "npm-run-all build:js",
-    "build:js": "microbundle -i src/index.ts --no-pkg-main -f iife",
+    "build:js": "microbundle -i src/ConsentManager.ts --no-pkg-main -f iife",
     "build:docs": "vuepress build docs",
-    "lint": "eslint src --ext .js,.ts",
+    "lint": "eslint src_old-2 --ext .js,.ts",
     "watch:js": "microbundle watch",
     "docs:serve": "vuepress dev docs"
   },
