@@ -24,15 +24,6 @@ After installation, in2iframeconsent can be installed via an import. It is recom
 import('in2iframeconsent');
 ```
 
-### Styling
-in2iframeconsent provides predefined styling for the consent boxes. We recommend using this styling as a base for your own implementation.
-
-**To import the CSS with SCSS use following code:**
-
-```scss
-@import 'node_modules/in2iframeconsent/dist/css/in2iframeconsent.css';
-```
-
 ---
 
 

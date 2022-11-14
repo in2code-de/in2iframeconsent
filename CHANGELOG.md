@@ -1,4 +1,8 @@
 # Changelog
+
+## [3.0.16] - 2022-11-01
+* Remove generic styling from consent box
+
 ## [3.0.16] - 2022-06-01
 * Update npm dependencies
 

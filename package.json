@@ -4,20 +4,17 @@
   "version": "3.0.16",
   "source": "src/index.ts",
   "main": "dist/js/in2iframeconsent.js",
-  "style": "dist/css/in2iframeconsent.css",
   "mangle": {
     "regex": "^_"
   },
   "scripts": {
     "prepublishOnly": "npm run build",
     "prebuild": "npm install & rm -rf dist --silent",
-    "build": "npm-run-all build:js build:css",
+    "build": "npm-run-all build:js",
     "build:js": "microbundle -i src/index.ts --no-pkg-main -f iife",
-    "build:css": "sass src/assets/sass/styles.scss dist/css/in2iframeconsent.css --style compressed",
     "build:docs": "vuepress build docs",
     "lint": "eslint src --ext .js,.ts",
     "watch:js": "microbundle watch",
-    "watch:scss": "sass --watch src/assets/sass/styles.scss dist/styles/in2iframeconsent.css --style compressed",
     "docs:serve": "vuepress dev docs"
   },
   "devDependencies": {
@@ -28,7 +25,6 @@
     "eslint-config-airbnb-typescript": "^17.0.0",
     "microbundle": "^0.15.0",
     "npm-run-all": "^4.1.5",
-    "sass": "^1.43.4",
     "typescript": "^4.4.4",
     "vuepress": "^2.0.0-beta.46"
   },
