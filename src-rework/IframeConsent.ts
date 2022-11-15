@@ -14,12 +14,12 @@ export default class IframeConsent extends HTMLElement {
   }
 
   private showConsent() {
-    const consent = document.getElementById('consent');
+    const consent = document.getElementById('consent') as HTMLTemplateElement | null;
     if (consent === null) {
       throw new Error('Consent element not found');
     }
 
-    const consentContent = consent.cloneNode(true);
+    const consentContent = consent.content.cloneNode(true);
     this.shadow.innerHTML = '';
     this.shadow.appendChild(consentContent);
     const button = this.shadow.querySelector('button') as HTMLButtonElement | null;
@@ -28,12 +28,12 @@ export default class IframeConsent extends HTMLElement {
   }
 
   private showIframe = () => {
-    const iframe = document.getElementById('iframe');
+    const iframe = document.getElementById('iframe') as HTMLTemplateElement | null;
     if (iframe === null) {
       throw new Error('Iframe element not found');
     }
 
-    const iframeContent = iframe.cloneNode(true);
+    const iframeContent = iframe.content.cloneNode(true);
     this.shadow.innerHTML = '';
     this.shadow.appendChild(iframeContent);
   };
