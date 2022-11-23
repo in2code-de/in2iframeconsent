@@ -1,4 +1,7 @@
 # Changelog
+## [3.0.17] - 2022-11-23
+* Set sameSite=strict to in2iframeconsent cookie
+
 ## [3.0.16] - 2022-06-01
 * Update npm dependencies
 
