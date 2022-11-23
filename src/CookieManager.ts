@@ -15,7 +15,7 @@ export default class CookieManager {
     expirationDate.setMonth(expirationDate.getMonth() + expirationMonths);
     const expirationDateString = expirationDate.toUTCString();
 
-    document.cookie = `${name}=${value};expires=${expirationDateString};domain=${domain};path=/;SameSite=None;secure`;
+    document.cookie = `${name}=${value};expires=${expirationDateString};domain=${domain};path=/;SameSite=Strict;secure`;
   }
 
   public static _deleteCookie(name: string): void {
