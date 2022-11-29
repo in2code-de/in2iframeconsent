@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>in2iframeconsent testing environment</title>
-    </head>
-    <body>
-        <script type="module" src="/src/main.ts"></script>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>in2cookiemodal testing</title>
+  </head>
+  <body>
+
+  <consent-solution>
+    <template data-type="consent">
+      <h1>Consent</h1>
+
+      <button data-type="consent-button">
+        Enable consent
+      </button>
+    </template>
+
+    <template data-type="iframe">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/bMy9g0USMd8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </template>
+  </consent-solution>
+
+  <script type="module" src="/src/main.ts"></script>
+
+  </body>
 </html>

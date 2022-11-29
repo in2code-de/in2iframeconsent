@@ -1,23 +1,18 @@
 {
   "name": "in2iframeconsent",
   "type": "module",
-  "files": [
-    "dist"
-  ],
-  "main": "./dist/my-lib.umd.cjs",
-  "module": "./dist/my-lib.js",
+  "private": true,
   "version": "4.0.0",
-  "scripts": {
-    "dev": "vite dev",
-    "build": "vite build"
+  "main": "dist/in2iframeconsent.umd.cjs",
+  "module": "dist/in2iframeconsent.js",
+  "exports": {
+    ".": {
+      "import": "./dist/in2consentsolution.js",
+      "require": "./dist/in2consentsolution.umd.cjs"
+    }
   },
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.27.0",
-    "@typescript-eslint/parser": "^5.27.0",
-    "eslint": "^8.16.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "vite": "^3.2.3"
+  "publishConfig": {
+    "@in2code-team:registry": " https://gitlab.in2code.de/api/v4/projects/321/packages/npm/"
   },
   "repository": {
     "type": "git",
@@ -27,5 +22,17 @@
   "bugs": {
     "url": "https://github.com/in2code-de/in2iframeconsent/issues"
   },
-  "homepage": "https://github.com/in2code-de/in2iframeconsent#readme"
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "buildUnsafe": "vite build"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.9",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.2.3",
+    "vite-plugin-eslint": "^1.8.1"
+  }
 }

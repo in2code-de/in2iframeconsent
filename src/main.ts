@@ -1,12 +1,3 @@
-const consent = document.createElement('iframe-consent');
-consent.innerHTML = `
-    <template id="consent">
-        <h1>Consent</h1>
-    </template>
+import '../lib/index';
 
-    <template id="iframe">
-        <iframe />
-    </template>
-`;
-
-document.body.appendChild(consent);
+export {};
