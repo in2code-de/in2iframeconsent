@@ -24,8 +24,7 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
-    "buildUnsafe": "vite build"
+    "build": "tsc && vite build"
   },
   "devDependencies": {
     "@types/node": "^18.11.9",
